@@ -5,6 +5,7 @@ from aiogram.filters import Command
 from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
 
 BOT_TOKEN = os.getenv("BOT_TOKEN")
+MAP_URL = os.getenv("MAP_URL", "https://wwgame28.github.io/perimeter/web_map/")
 
 SCENES = {
     "start": {
@@ -37,6 +38,15 @@ SCENES = {
     },
 }
 
+SCENE_TO_MAP_STATE = {
+    "start": "day1_start",
+    "fedor": "day1_start",
+    "gate": "day1_start",
+    "team": "day1_start",
+    "yard": "day1_yard",
+    "hall": "day1_yard",
+}
+
 user_scene = {}
 
 def keyboard(scene_id: str):
@@ -46,13 +56,18 @@ def keyboard(scene_id: str):
         for text, next_id in scene["choices"]
     ])
 
+def map_keyboard(scene_id: str):
+    state = SCENE_TO_MAP_STATE.get(scene_id, "day1_yard")
+    url = f"{MAP_URL}?state={state}"
+    return InlineKeyboardMarkup(inline_keyboard=[
+        [InlineKeyboardButton(text="🗺 Открыть карту", url=url)]
+    ])
+
 async def send_scene(message_or_query, scene_id: str):
     scene = SCENES.get(scene_id, SCENES["start"])
     if isinstance(message_or_query, CallbackQuery):
-        chat_id = message_or_query.message.chat.id
         await message_or_query.message.answer(scene["text"], reply_markup=keyboard(scene_id))
     else:
-        chat_id = message_or_query.chat.id
         await message_or_query.answer(scene["text"], reply_markup=keyboard(scene_id))
 
 async def main():
@@ -63,12 +78,17 @@ async def main():
 
     @dp.message(Command("start"))
     async def start(message: types.Message):
-        await message.answer("Добро пожаловать в «Периметр». Команда: /play")
+        await message.answer("Добро пожаловать в «Периметр». Команды: /play, /map, /team")
 
     @dp.message(Command("play"))
     async def play(message: types.Message):
         user_scene[message.from_user.id] = "start"
         await send_scene(message, "start")
+
+    @dp.message(Command("map"))
+    async def map_cmd(message: types.Message):
+        scene_id = user_scene.get(message.from_user.id, "start")
+        await message.answer("Карта текущего положения команды:", reply_markup=map_keyboard(scene_id))
 
     @dp.message(Command("team"))
     async def team(message: types.Message):
