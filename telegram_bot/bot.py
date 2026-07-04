@@ -9,9 +9,9 @@ from aiogram import Bot, Dispatcher, F, types
 from aiogram.filters import Command
 from aiogram.types import ReplyKeyboardMarkup, KeyboardButton, InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery, BufferedInputFile
 
-BOT_TOKEN = os.getenv("BOT_TOKEN")
-MAP_URL = os.getenv("MAP_URL", "https://wwgame28.github.io/perimeter/web_map/")
-PHONE_URL = os.getenv("PHONE_URL", "https://wwgame28.github.io/perimeter/web_phone/")
+BOT_TOKEN = (os.getenv("BOT_TOKEN") or "").strip()
+MAP_URL = (os.getenv("MAP_URL") or "https://wwgame28.github.io/perimeter/web_map/").strip()
+PHONE_URL = (os.getenv("PHONE_URL") or "https://wwgame28.github.io/perimeter/web_phone/").strip()
 BASE_DIR = Path(__file__).resolve().parent
 TEAM_IMAGE_B64 = BASE_DIR / "assets" / "team_intro.b64"
 
