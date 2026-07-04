@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1600" viewBox="0 0 1200 1600">
+  <rect width="1200" height="1600" fill="#0b0f14"/>
+  <text x="600" y="60" text-anchor="middle" fill="#e6e6e6" font-size="42" font-family="monospace">НИИ «ПЕРИМЕТР» — рабочая карта</text>
+  <text x="600" y="100" text-anchor="middle" fill="#9aa4ad" font-size="20" font-family="monospace">Версия для сценария и Telegram-бота</text>
+
+  <defs>
+    <style>
+      .room{fill:#18202a;stroke:#7f8a93;stroke-width:3;rx:12;}
+      .danger{fill:#2a1518;stroke:#a64040;stroke-width:3;rx:12;}
+      .safe{fill:#14221a;stroke:#4e9a62;stroke-width:3;rx:12;}
+      .text{fill:#f0f0f0;font-family:monospace;font-size:22px;text-anchor:middle;}
+      .small{fill:#aeb7c0;font-family:monospace;font-size:16px;text-anchor:middle;}
+      .line{stroke:#77838d;stroke-width:4;fill:none;}
+      .redline{stroke:#9f3b3b;stroke-width:4;fill:none;stroke-dasharray:10 8;}
+      .title{fill:#c9d1d9;font-family:monospace;font-size:28px;font-weight:bold;}
+    </style>
+  </defs>
+
+  <text x="60" y="150" class="title">УРОВЕНЬ 0 — ТЕРРИТОРИЯ</text>
+  <rect x="500" y="180" width="200" height="70" class="room"/><text x="600" y="222" class="text">КПП-1</text>
+  <line x1="600" y1="250" x2="600" y2="300" class="line"/>
+  <rect x="450" y="300" width="300" height="80" class="safe"/><text x="600" y="346" class="text">ВНУТРЕННИЙ ДВОР</text>
+  <line x1="450" y1="340" x2="260" y2="420" class="line"/>
+  <line x1="600" y1="380" x2="600" y2="420" class="line"/>
+  <line x1="750" y1="340" x2="940" y2="420" class="line"/>
+  <rect x="140" y="420" width="240" height="80" class="room"/><text x="260" y="468" class="text">ГАРАЖ</text><text x="260" y="492" class="small">фонарь / инструменты</text>
+  <rect x="460" y="420" width="280" height="80" class="room"/><text x="600" y="468" class="text">ГЛАВНЫЙ ХОЛЛ</text><text x="600" y="492" class="small">часы 03:07</text>
+  <rect x="820" y="420" width="240" height="80" class="room"/><text x="940" y="468" class="text">МЕДБЛОК</text><text x="940" y="492" class="small">Ева / карты</text>
+
+  <text x="60" y="580" class="title">УРОВЕНЬ 1 — ГЛАВНЫЙ КОРПУС</text>
+  <line x1="600" y1="500" x2="600" y2="620" class="line"/>
+  <rect x="410" y="620" width="380" height="80" class="room"/><text x="600" y="668" class="text">АДМИНИСТРАТИВНЫЙ БЛОК</text><text x="600" y="692" class="small">кабинет директора / кадры</text>
+  <line x1="600" y1="700" x2="360" y2="780" class="line"/>
+  <line x1="600" y1="700" x2="840" y2="780" class="line"/>
+  <rect x="200" y="780" width="320" height="80" class="room"/><text x="360" y="828" class="text">АРХИВ</text><text x="360" y="852" class="small">документы / схемы</text>
+  <rect x="680" y="780" width="320" height="80" class="room"/><text x="840" y="828" class="text">СЕРВЕРНАЯ</text><text x="840" y="852" class="small">midpoint</text>
+  <line x1="600" y1="700" x2="600" y2="900" class="line"/>
+  <rect x="400" y="900" width="400" height="90" class="danger"/><text x="600" y="948" class="text">ЛАБОРАТОРНЫЙ КОРПУС</text><text x="600" y="974" class="small">PX-17 / наблюдательная</text>
+
+  <text x="60" y="1080" class="title">УРОВЕНЬ -1 — ПОДЗЕМНЫЙ КОМПЛЕКС</text>
+  <line x1="600" y1="990" x2="600" y2="1120" class="redline"/>
+  <rect x="470" y="1120" width="260" height="75" class="room"/><text x="600" y="1164" class="text">ГЕНЕРАТОРНАЯ</text>
+  <line x1="600" y1="1195" x2="600" y2="1260" class="line"/>
+  <rect x="420" y="1260" width="360" height="80" class="danger"/><text x="600" y="1308" class="text">ТЕХНИЧЕСКИЕ ТОННЕЛИ</text>
+  <line x1="420" y1="1300" x2="260" y2="1390" class="line"/>
+  <line x1="600" y1="1340" x2="600" y2="1390" class="line"/>
+  <line x1="780" y1="1300" x2="940" y2="1390" class="line"/>
+  <rect x="90" y="1390" width="340" height="80" class="danger"/><text x="260" y="1438" class="text">ХРАНИЛИЩЕ PX-17</text>
+  <rect x="460" y="1390" width="280" height="80" class="danger"/><text x="600" y="1438" class="text">КАМЕРЫ ИСПЫТАНИЙ</text>
+  <rect x="810" y="1390" width="260" height="80" class="room"/><text x="940" y="1438" class="text">ВЕНТИЛЯЦИЯ</text>
+  <line x1="600" y1="1470" x2="600" y2="1510" class="redline"/>
+  <rect x="390" y="1510" width="420" height="60" class="danger"/><text x="600" y="1548" class="text">ЦЕНТРАЛЬНАЯ ЛАБОРАТОРИЯ</text>
+
+  <text x="60" y="1565" fill="#9f3b3b" font-family="monospace" font-size="18">Красные зоны: высокий риск PX-17 / сюжетные развилки.</text>
+</svg>
