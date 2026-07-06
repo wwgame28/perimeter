@@ -1,1 +1,0 @@
-"""Perimeter Telegram bot package."""
