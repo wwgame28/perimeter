@@ -1,7 +1,0 @@
-.env
-*.sqlite3
-*.db
-__pycache__/
-.venv/
-/data/perimetr.sqlite3
-assets/images/*.png
